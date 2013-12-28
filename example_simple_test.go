@@ -6,6 +6,7 @@ import (
 	"github.com/cespare/trie"
 )
 
+// This example shows simple usage of a Trie as a []byte set.
 func ExampleSimple() {
 	t := trie.New()
 	t.Insert([]byte("hello"))

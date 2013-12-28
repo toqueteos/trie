@@ -6,6 +6,7 @@ import (
 	"github.com/cespare/trie"
 )
 
+// This example demonstrates walking through the nodes of a Trie.
 func ExampleWalk() {
 	t := trie.New()
 	for _, s := range []string{"folk", "foxes", "fox"} {
