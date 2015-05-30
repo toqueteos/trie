@@ -46,6 +46,27 @@ func (t *Trie) Contains(b []byte) bool {
 	return n.terminal
 }
 
+// PrefixIndex walks through `b` until a prefix is found (terminal node) or it is exhausted.
+func (t *Trie) PrefixIndex(b []byte) int {
+	var idx int
+	n := t.root
+	for _, c := range b {
+		next, ok := n.Walk(c)
+		if !ok {
+			return -1
+		}
+		if next.terminal {
+			return idx
+		}
+		n = next
+		idx++
+	}
+	if !n.terminal {
+		idx = -1
+	}
+	return idx
+}
+
 // Root returns the root node of a Trie. A valid Trie (i.e., constructed with New), always has a non-nil root
 // node.
 func (t *Trie) Root() *Node {
