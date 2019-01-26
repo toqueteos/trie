@@ -3,7 +3,7 @@ package trie_test
 import (
 	"fmt"
 
-	"github.com/cespare/trie"
+	"github.com/toqueteos/trie"
 )
 
 // This example shows simple usage of a Trie as a []byte set.
